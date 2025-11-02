@@ -1,4 +1,11 @@
-<?php wp_footer(); ?>
+<?php
+
+do_action('tanspot_footer');
+wp_footer();
+
+
+
+?>
 
 </body>
 

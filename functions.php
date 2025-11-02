@@ -32,9 +32,16 @@ function tanspot_setup()
         'gallery',
         'audio',
     ));
+
+    // Register Menu
+    register_nav_menus(array(
+        'tanspot-menu' => esc_html__('Primary Menu', 'tanspot'),
+    ));
 };
 
 add_action('after_setup_theme', 'tanspot_setup');
 
 
-require_once get_template_directory() . '/inc/theme-scirpts.php';
+require_once get_template_directory() . '/inc/common/theme-scirpts.php';
+require_once get_template_directory() . '/inc/common/theme-breadcrumb.php';
+require_once get_template_directory() . '/inc/theme-functions.php';

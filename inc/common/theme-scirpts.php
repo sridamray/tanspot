@@ -4,6 +4,12 @@ function tanspot_enqueue_scripts()
 {
     // Enqueue Stylesheet
 
+    $font_poppins_url = 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap';
+    $font_rubik_url = 'https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap';
+
+    wp_enqueue_style('google-fonts-poppins', $font_poppins_url, [], TRANSPOT_THEME_VERSION, 'all');
+    wp_enqueue_style('google-fonts-rubik', $font_rubik_url, [], TRANSPOT_THEME_VERSION, 'all');
+
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('animate', TRANSPOT_THEME_DIR . '/assets/css/animate.min.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('custom-animate', TRANSPOT_THEME_DIR . '/assets/css/custom-animate.css', [], TRANSPOT_THEME_VERSION, 'all');

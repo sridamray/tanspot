@@ -45,3 +45,6 @@ add_action('after_setup_theme', 'tanspot_setup');
 require_once get_template_directory() . '/inc/common/theme-scirpts.php';
 require_once get_template_directory() . '/inc/common/theme-breadcrumb.php';
 require_once get_template_directory() . '/inc/theme-functions.php';
+if (class_exists('kirki')) {
+    require_once get_template_directory() . '/inc/theme-customizer.php';
+}

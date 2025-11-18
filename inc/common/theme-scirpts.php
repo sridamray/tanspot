@@ -55,8 +55,8 @@ function tanspot_enqueue_scripts()
 
     // GSAP
     wp_enqueue_script('gsap', TRANSPOT_THEME_DIR . '/assets/js/gsap/gsap.js', array('jquery'), TRANSPOT_THEME_VERSION, true);
-    wp_enqueue_script('scrollTrigger', TRANSPOT_THEME_DIR . '/assets/js/gsap/ScrollTrigger.js', array('jquery'), TRANSPOT_THEME_VERSION, true);
-    wp_enqueue_script('splitText', TRANSPOT_THEME_DIR . '/assets/js/gsap/SplitText.js', array('jquery'), TRANSPOT_THEME_VERSION, true);
+    wp_enqueue_script('scrollTrigger', TRANSPOT_THEME_DIR . '/assets/js/gsap/scrollTrigger.js', array('jquery'), TRANSPOT_THEME_VERSION, true);
+    wp_enqueue_script('splitText', TRANSPOT_THEME_DIR . '/assets/js/gsap/splitText.js', array('jquery'), TRANSPOT_THEME_VERSION, true);
 
     // Main theme script (optional)
     wp_enqueue_script('theme-main', TRANSPOT_THEME_DIR . '/assets/js/script.js', array('jquery'), TRANSPOT_THEME_VERSION, true);

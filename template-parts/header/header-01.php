@@ -50,7 +50,8 @@
                 <div class="main-menu__wrapper-inner">
                     <div class="main-menu__left">
                         <div class="main-menu__logo">
-                            <a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/resources/logo-1.png" alt=""></a>
+                            <?php tanspot_theme_logo(); ?>
+
                         </div>
                     </div>
                     <div class="main-menu__main-menu-box">

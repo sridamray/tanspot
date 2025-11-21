@@ -1,3 +1,16 @@
+    <?php
+
+    $tanspot_header_top_phone = get_theme_mod('tanspot_header_top_phone', esc_html__('+15502505260', 'tanspot'));
+    $tanspot_header_top_email = get_theme_mod('tanspot_header_top_email', esc_html__('info@tanspot24.com', 'tanspot'));
+    $tanspot_header_top_location = get_theme_mod('tanspot_header_top_location', esc_html__('4124 Cimmaron Road, CA 92806', 'tanspot'));
+
+
+
+    ?>
+
+
+
+
     <header class="main-header">
         <div class="main-menu__top">
             <div class="main-menu__top-inner">
@@ -7,7 +20,7 @@
                             <i class="icon-phone-call"></i>
                         </div>
                         <div class="text">
-                            <p><a href="tel:15502505260">+1 (550) 250 5260</a></p>
+                            <p><a href="tel:<?php echo esc_attr($tanspot_header_top_phone, 'tanspot'); ?>"><?php echo esc_html($tanspot_header_top_phone, 'tanspot'); ?></a></p>
                         </div>
                     </li>
                     <li>
@@ -15,7 +28,7 @@
                             <i class="icon-email"></i>
                         </div>
                         <div class="text">
-                            <p><a href="mailto:info@tanspot24.com">info@tanspot24.com</a>
+                            <p><a href="mailto:<?php echo esc_attr($tanspot_header_top_email, 'tanspot'); ?>"><?php echo esc_html($tanspot_header_top_email, 'tanspot'); ?></a>
                             </p>
                         </div>
                     </li>
@@ -24,7 +37,7 @@
                             <i class="icon-location1"></i>
                         </div>
                         <div class="text">
-                            <p>4124 Cimmaron Road, CA 92806</p>
+                            <p><?php echo esc_html($tanspot_header_top_location, 'tanspot'); ?></p>
                         </div>
                     </li>
                 </ul>

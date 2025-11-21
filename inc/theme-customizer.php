@@ -56,6 +56,47 @@ add_action(
             ]
         );
 
+        // Header Top Section
+
+        new \Kirki\Section(
+            'tanspot_header_top',
+            [
+                'title'       => esc_html__('Header Top Settings', 'tanspot'),
+                'panel'       => 'tanspot_theme_customizer',
+                'priority'    => 160,
+            ]
+        );
+
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_header_top_phone',
+                'label'    => esc_html__('Phone Number', 'tanspot'),
+                'section'  => 'tanspot_header_top',
+                'default'  => esc_html__('+15502505260', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_header_top_email',
+                'label'    => esc_html__('Email Address', 'tanspot'),
+                'section'  => 'tanspot_header_top',
+                'default'  => esc_html__('info@tanspot24.com', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_header_top_location',
+                'label'    => esc_html__('Location', 'tanspot'),
+                'section'  => 'tanspot_header_top',
+                'default'  => esc_html__('4124 Cimmaron Road, CA 92806', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+
+
+
 
 
 

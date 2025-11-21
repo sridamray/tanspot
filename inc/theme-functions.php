@@ -72,10 +72,16 @@ function tanspot_theme_logo()
 {
     $tanspot_logo_image = get_theme_mod('tanspot_logo_image', get_template_directory_uri() . '/assets/img/logo/logo-1.png');
     $tanspot_page_logo  = function_exists('get_field') ? get_field('tanspot_page_logo') : NULL;
+    $tanspot_page_logo2  = function_exists('get_field') ? get_field('tanspot_page_logo2') : NULL;
 
 ?>
+
+
     <?php if (!empty($tanspot_page_logo)) : ?>
         <a href="<?php echo esc_url(home_url(), 'tanspot'); ?>"><img src="<?php echo esc_url($tanspot_page_logo['url'], 'tanspot'); ?>" alt="<?php echo esc_attr($tanspot_page_logo['title'], 'tanspot'); ?>"></a>
+
+    <?php elseif (!empty($tanspot_page_logo2)): ?>
+        <a class="secondary_logo" href="<?php echo esc_url(home_url(), 'tanspot'); ?>"><img src="<?php echo esc_url($tanspot_page_logo2['url'], 'tanspot'); ?>" alt="<?php echo esc_attr($tanspot_page_logo2['title'], 'tanspot'); ?>"></a>
     <?php else : ?>
 
 

@@ -71,6 +71,20 @@ acf_add_local_field_group(
                     'id' => '',
                 ),
             ),
+            array(
+                'key' => 'tanspot_page_logos2',
+                'label' => 'Header Secondary Logo',
+                'name' => 'tanspot_page_logo2',
+                'type' => 'image',
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'wrapper' => array(
+                    'width' => '25', // Set width to 50%
+                    'class' => 'tanspot_page_header_logo',
+                    'id' => '',
+                ),
+            ),
 
 
         ),

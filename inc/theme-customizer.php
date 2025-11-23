@@ -67,6 +67,19 @@ add_action(
             ]
         );
 
+        new \Kirki\Field\Checkbox_Switch(
+            [
+                'settings'    => 'header_top_switcher',
+                'label'       => esc_html__('Enable Top Bar ?', 'tanspot'),
+                'section'     => 'tanspot_header_top',
+                'default'     => 'on',
+                'choices'     => [
+                    'on'  => esc_html__('Enable', 'tanspot'),
+                    'off' => esc_html__('Disable', 'tanspot'),
+                ],
+            ]
+        );
+
         new \Kirki\Field\Text(
             [
                 'settings' => 'tanspot_header_top_phone',
@@ -94,6 +107,109 @@ add_action(
                 'priority' => 10,
             ]
         );
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_header_top_welcome_text',
+                'label'    => esc_html__('Welcome Title', 'tanspot'),
+                'section'  => 'tanspot_header_top',
+                'default'  => esc_html__('Welcome to Our Tanspot Office', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_header_top_office_time',
+                'label'    => esc_html__('Time', 'tanspot'),
+                'section'  => 'tanspot_header_top',
+                'default'  => esc_html__('Mon - Fri: 09:00 - 05:00', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+
+        // Header To social
+
+
+        new \Kirki\Section(
+            'tanspot_header_top_social',
+            [
+                'title'       => esc_html__('Header Top Social', 'tanspot'),
+                'panel'       => 'tanspot_theme_customizer',
+                'priority'    => 160,
+            ]
+        );
+
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_header_top_twitter',
+                'label'    => esc_html__('Twitter', 'tanspot'),
+                'section'  => 'tanspot_header_top_social',
+                'default'  => esc_html__('#', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+
+        // Header Top Social Repeater
+
+
+        new \Kirki\Field\Repeater(
+            [
+                'settings' => 'header_top_social_repeater',
+                'label'    => esc_html__('Social item', 'tanspot'),
+                'section'  => 'tanspot_header_top_social',
+                'priority' => 10,
+                'fields'   => [
+                    'social_link'   => [
+                        'type'        => 'text',
+                        'label'       => esc_html__('Social Link', 'tanspot'),
+                        'default'     => esc_html__('#', 'tanspot'),
+                    ],
+                    'social_link_icon'   => [
+                        'type'        => 'select',
+                        'label'       => esc_html__('Select Icon', 'tanspot'),
+                        'default'     => esc_html__('#', 'tanspot'),
+                        'choices'     => [
+                            'fab fa-facebook' => esc_html__('Facebook', 'tanspot'),
+                            'fab fa-pinterest-p' => esc_html__('Pinterest', 'tanspot'),
+                            'fab fa-instagram' => esc_html__('Instagram', 'tanspot'),
+                        ],
+                    ],
+
+                ],
+            ]
+        );
+
+
+
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_header_top_facebook',
+                'label'    => esc_html__('Facebook', 'tanspot'),
+                'section'  => 'tanspot_header_top_social',
+                'default'  => esc_html__('#', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_header_top_pinterest',
+                'label'    => esc_html__('Pinterest', 'tanspot'),
+                'section'  => 'tanspot_header_top_social',
+                'default'  => esc_html__('#', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_header_top_instagram',
+                'label'    => esc_html__('Instagram', 'tanspot'),
+                'section'  => 'tanspot_header_top_social',
+                'default'  => esc_html__('#', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+
+
+
 
 
 

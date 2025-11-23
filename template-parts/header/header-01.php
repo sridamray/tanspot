@@ -3,6 +3,16 @@
     $tanspot_header_top_phone = get_theme_mod('tanspot_header_top_phone', esc_html__('+15502505260', 'tanspot'));
     $tanspot_header_top_email = get_theme_mod('tanspot_header_top_email', esc_html__('info@tanspot24.com', 'tanspot'));
     $tanspot_header_top_location = get_theme_mod('tanspot_header_top_location', esc_html__('4124 Cimmaron Road, CA 92806', 'tanspot'));
+    $tanspot_header_top_welcome_text = get_theme_mod('tanspot_header_top_welcome_text', esc_html__('Welcome to Our Tanspot Office', 'tanspot'));
+    $tanspot_header_top_office_time = get_theme_mod('tanspot_header_top_office_time', esc_html__('Mon - Fri: 09:00 - 05:00', 'tanspot'));
+    $tanspot_header_top_twitter = get_theme_mod('tanspot_header_top_twitter', esc_html__('#', 'tanspot'));
+    $tanspot_header_top_facebook = get_theme_mod('tanspot_header_top_facebook', esc_html__('#', 'tanspot'));
+    $tanspot_header_top_pinterest = get_theme_mod('tanspot_header_top_pinterest', esc_html__('#', 'tanspot'));
+    $tanspot_header_top_instagram = get_theme_mod('tanspot_header_top_instagram', esc_html__('#', 'tanspot'));
+
+    // Header Social Repeater
+    $header_top_social_repeater = get_theme_mod('header_top_social_repeater');
+    $header_top_switcher = get_theme_mod('header_top_switcher', true);
 
 
 
@@ -12,52 +22,64 @@
 
 
     <header class="main-header">
-        <div class="main-menu__top">
-            <div class="main-menu__top-inner">
-                <ul class="list-unstyled main-menu__contact-list">
-                    <li>
-                        <div class="icon">
-                            <i class="icon-phone-call"></i>
+        <?php if (!empty($header_top_switcher)) : ?>
+            <div class="main-menu__top">
+                <div class="main-menu__top-inner">
+                    <ul class="list-unstyled main-menu__contact-list">
+                        <li>
+                            <div class="icon">
+                                <i class="icon-phone-call"></i>
+                            </div>
+                            <div class="text">
+                                <p><a href="tel:<?php echo esc_attr($tanspot_header_top_phone, 'tanspot'); ?>"><?php echo esc_html($tanspot_header_top_phone, 'tanspot'); ?></a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="icon-email"></i>
+                            </div>
+                            <div class="text">
+                                <p><a href="mailto:<?php echo esc_attr($tanspot_header_top_email, 'tanspot'); ?>"><?php echo esc_html($tanspot_header_top_email, 'tanspot'); ?></a>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="icon-location1"></i>
+                            </div>
+                            <div class="text">
+                                <p><?php echo esc_html($tanspot_header_top_location, 'tanspot'); ?></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="main-menu__top-welcome-text"><?php echo esc_html($tanspot_header_top_welcome_text, 'tanspot'); ?></p>
+                    <div class="main-menu__top-right">
+                        <div class="main-menu__top-time">
+                            <div class="main-menu__top-time-icon">
+                                <span class="fas fa-clock"></span>
+                            </div>
+                            <p class="main-menu__top-text"><?php echo esc_html($tanspot_header_top_office_time, 'tanspot'); ?></p>
                         </div>
-                        <div class="text">
-                            <p><a href="tel:<?php echo esc_attr($tanspot_header_top_phone, 'tanspot'); ?>"><?php echo esc_html($tanspot_header_top_phone, 'tanspot'); ?></a></p>
+                        <div class="main-menu__social">
+                            <?php if (!empty($tanspot_header_top_twitter)) : ?>
+                                <a href="<?php echo esc_url($tanspot_header_top_twitter, 'tanspot'); ?>"><i class="fab fa-twitter"></i></a>
+                            <?php endif; ?>
+
+
+                            <?php foreach ($header_top_social_repeater as $header_top_socials):
+
+
+                            ?>
+                                <a href="<?php echo esc_url($header_top_socials['social_link'], 'tanspot'); ?>"><i class="<?php echo esc_attr($header_top_socials['social_link_icon'], 'tanpost'); ?>"></i></a>
+                            <?php endforeach; ?>
+
                         </div>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <i class="icon-email"></i>
-                        </div>
-                        <div class="text">
-                            <p><a href="mailto:<?php echo esc_attr($tanspot_header_top_email, 'tanspot'); ?>"><?php echo esc_html($tanspot_header_top_email, 'tanspot'); ?></a>
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <i class="icon-location1"></i>
-                        </div>
-                        <div class="text">
-                            <p><?php echo esc_html($tanspot_header_top_location, 'tanspot'); ?></p>
-                        </div>
-                    </li>
-                </ul>
-                <p class="main-menu__top-welcome-text">Welcome to Our Tanspot Office</p>
-                <div class="main-menu__top-right">
-                    <div class="main-menu__top-time">
-                        <div class="main-menu__top-time-icon">
-                            <span class="fas fa-clock"></span>
-                        </div>
-                        <p class="main-menu__top-text">Mon - Fri: 09:00 - 05:00</p>
-                    </div>
-                    <div class="main-menu__social">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php endif; ?>
+
+
         <nav class="main-menu">
             <div class="main-menu__wrapper">
                 <div class="main-menu__wrapper-inner">

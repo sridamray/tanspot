@@ -209,6 +209,99 @@ add_action(
         );
 
 
+        // Header right Settings
+
+        new \Kirki\Section(
+            'tanspot_header_right_settings',
+            [
+                'title'       => esc_html__('Header Right Settings', 'tanspot'),
+                'panel'       => 'tanspot_theme_customizer',
+                'priority'    => 160,
+            ]
+        );
+
+        new \Kirki\Field\Checkbox_Switch(
+            [
+                'settings'    => 'header_right_switcher',
+                'label'       => esc_html__('Enable Header Right ?', 'tanspot'),
+                'section'     => 'tanspot_header_right_settings',
+                'default'     => 'off',
+                'choices'     => [
+                    'on'  => esc_html__('Enable', 'tanspot'),
+                    'off' => esc_html__('Disable', 'tanspot'),
+                ],
+            ]
+        );
+
+
+        new \Kirki\Field\Checkbox_Switch(
+            [
+                'settings'    => 'header_right_cta_switcher',
+                'label'       => esc_html__('Enable CTA ?', 'tanspot'),
+                'section'     => 'tanspot_header_right_settings',
+                'default'     => 'on',
+                'choices'     => [
+                    'on'  => esc_html__('Enable', 'tanspot'),
+                    'off' => esc_html__('Disable', 'tanspot'),
+                ],
+            ]
+        );
+
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_header_right_cta_text',
+                'label'    => esc_html__('CTA Text', 'tanspot'),
+                'section'  => 'tanspot_header_right_settings',
+                'default'  => esc_html__('Call Anytime', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_header_right_cta_phone',
+                'label'    => esc_html__('CTA Number', 'tanspot'),
+                'section'  => 'tanspot_header_right_settings',
+                'default'  => esc_html__('+9288006780', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+
+        new \Kirki\Field\Checkbox_Switch(
+            [
+                'settings'    => 'header_right_btn_switcher',
+                'label'       => esc_html__('Enable BTN ?', 'tanspot'),
+                'section'     => 'tanspot_header_right_settings',
+                'default'     => 'on',
+                'choices'     => [
+                    'on'  => esc_html__('Enable', 'tanspot'),
+                    'off' => esc_html__('Disable', 'tanspot'),
+                ],
+            ]
+        );
+
+
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_header_right_btn_text',
+                'label'    => esc_html__('Right BTN Text', 'tanspot'),
+                'section'  => 'tanspot_header_right_settings',
+                'default'  => esc_html__('Track Order', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_header_right_btn_url',
+                'label'    => esc_html__('Right BTN URL', 'tanspot'),
+                'section'  => 'tanspot_header_right_settings',
+                'default'  => esc_html__('#', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+
+
 
 
 

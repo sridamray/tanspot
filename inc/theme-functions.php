@@ -89,3 +89,33 @@ function tanspot_theme_logo()
 
 <?php
 }
+
+
+// Search Popup Function
+
+function tanspot_search_popup()
+{
+?>
+
+    <div class="search-popup">
+        <div class="color-layer"></div>
+        <button class="close-search"><span class="far fa-times fa-fw"></span></button>
+        <form method="post" action="blog.html">
+            <div class="form-group">
+                <input type="search" name="search-field" value="" placeholder="Search Here" required="">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+
+
+<?php
+}
+
+// header side info function
+
+function tanspot_header_sideinfo()
+{
+    get_template_part('template-parts/header-sideinfo');
+}
+add_action('tanspot_header_sideinfo', 'tanspot_header_sideinfo');

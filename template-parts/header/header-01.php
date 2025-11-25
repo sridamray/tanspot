@@ -13,6 +13,13 @@
     // Header Social Repeater
     $header_top_social_repeater = get_theme_mod('header_top_social_repeater');
     $header_top_switcher = get_theme_mod('header_top_switcher', true);
+    $header_right_switcher = get_theme_mod('header_right_switcher', false);
+    $tanspot_header_right_cta_text = get_theme_mod('tanspot_header_right_cta_text', esc_html__('Call Anytime', 'tanspot'));
+    $tanspot_header_right_cta_phone = get_theme_mod('tanspot_header_right_cta_phone', esc_html__('+9288006780', 'tanspot'));
+    $header_right_cta_switcher = get_theme_mod('header_right_cta_switcher', true);
+    $tanspot_header_right_btn_text = get_theme_mod('tanspot_header_right_btn_text', esc_html__('Track Order', 'tanspot'));
+    $tanspot_header_right_btn_url = get_theme_mod('tanspot_header_right_btn_url', esc_html__('#', 'tanspot'));
+    $header_right_btn_switcher = get_theme_mod('header_right_btn_switcher', true);
 
 
 
@@ -96,43 +103,49 @@
 
                     </div>
 
+                    <?php if (!empty($header_right_switcher)) : ?>
+                        <div class="main-menu__right">
+                            <?php if (!empty($header_right_cta_switcher)) : ?>
+                                <div class="main-menu__call">
+                                    <div class="main-menu__call-icon">
+                                        <i class="icon-phone-call"></i>
+                                    </div>
+                                    <div class="main-menu__call-content">
+                                        <p class="main-menu__call-sub-title"><?php echo esc_html($tanspot_header_right_cta_text, 'tanspot'); ?></p>
+                                        <h5 class="main-menu__call-number"><a href="tel:<?php echo esc_attr($tanspot_header_right_cta_phone, 'tanspot'); ?>"><?php echo esc_html($tanspot_header_right_cta_phone, 'tanspot'); ?></a></h5>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
 
-                    <div class="main-menu__right">
-                        <div class="main-menu__call">
-                            <div class="main-menu__call-icon">
-                                <i class="icon-phone-call"></i>
-                            </div>
-                            <div class="main-menu__call-content">
-                                <p class="main-menu__call-sub-title">Call Anytime</p>
-                                <h5 class="main-menu__call-number"><a href="tel:9288006780">+92 ( 8800 ) -
-                                        6780</a></h5>
-                            </div>
-                        </div>
-                        <div class="main-menu__search-cart-box">
                             <div class="main-menu__search-cart-box">
-                                <div class="main-menu__search-box">
-                                    <a href="#" class="main-menu__search searcher-toggler-box icon-search"></a>
-                                </div>
-                                <div class="main-menu__cart-box">
-                                    <a href="cart.html" class="main-menu__cart">
-                                        <span class="far fa-shopping-cart"></span>
-                                        <span class="main-menu__cart-count">02</span>
-                                    </a>
+                                <div class="main-menu__search-cart-box">
+                                    <div class="main-menu__search-box">
+                                        <a href="#" class="main-menu__search searcher-toggler-box icon-search"></a>
+                                    </div>
+                                    <div class="main-menu__cart-box">
+                                        <a href="cart.html" class="main-menu__cart">
+                                            <span class="far fa-shopping-cart"></span>
+                                            <span class="main-menu__cart-count">02</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="main-menu__nav-sidebar-icon">
+                                <a class="navSidebar-button" href="#">
+                                    <span class="icon-dots-menu-one"></span>
+                                    <span class="icon-dots-menu-two"></span>
+                                    <span class="icon-dots-menu-three"></span>
+                                </a>
+                            </div>
+                            <?php if (!empty($header_right_btn_switcher)) : ?>
+                                <div class="main-menu__btn-box">
+                                    <a href="<?php echo esc_url($tanspot_header_right_btn_url, 'tanspot'); ?>" class="thm-btn"><?php echo esc_html($tanspot_header_right_btn_text, 'tanspot'); ?><span><i
+                                                class="icon-right-arrow"></i></span></a>
+                                </div>
+                            <?php endif; ?>
                         </div>
-                        <div class="main-menu__nav-sidebar-icon">
-                            <a class="navSidebar-button" href="#">
-                                <span class="icon-dots-menu-one"></span>
-                                <span class="icon-dots-menu-two"></span>
-                                <span class="icon-dots-menu-three"></span>
-                            </a>
-                        </div>
-                        <div class="main-menu__btn-box">
-                            <a href="contact.html" class="thm-btn">Track Order<span><i
-                                        class="icon-right-arrow"></i></span></a>
-                        </div>
-                    </div>
+
+                    <?php endif; ?>
 
 
                 </div>

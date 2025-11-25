@@ -8,8 +8,13 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
+
+    <?php wp_body_open(); ?>
+
+
 
 
     <?php do_action('tanspot_header'); ?>
     <?php do_action('tanspot_breadcrumb_content'); ?>
+    <?php tanspot_search_popup(); ?>

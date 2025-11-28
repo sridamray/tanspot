@@ -15,10 +15,10 @@ function tanspot_enqueue_scripts()
     wp_enqueue_style('custom-animate', TRANSPOT_THEME_DIR . '/assets/css/custom-animate.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('swiper', TRANSPOT_THEME_DIR . '/assets/css/swiper.min.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('font-awesome', TRANSPOT_THEME_DIR . '/assets/css/font-awesome-all.css', [], TRANSPOT_THEME_VERSION, 'all');
-    wp_enqueue_style('jarallax', TRANSPOT_THEME_DIR . '/assets/css/jarallax.css.css', [], TRANSPOT_THEME_VERSION, 'all');
+    wp_enqueue_style('jarallax', TRANSPOT_THEME_DIR . '/assets/css/jarallax.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('magnific-popup', TRANSPOT_THEME_DIR . '/assets/css/jquery.magnific-popup.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('flaticon', TRANSPOT_THEME_DIR . '/assets/css/flaticon.css', [], TRANSPOT_THEME_VERSION, 'all');
-    wp_enqueue_style('owl-carousel', TRANSPOT_THEME_DIR . '/assets/css/owl.carousel.min.css.css', [], TRANSPOT_THEME_VERSION, 'all');
+    wp_enqueue_style('owl-carousel', TRANSPOT_THEME_DIR . '/assets/css/owl.carousel.min.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('owl-theme-default', TRANSPOT_THEME_DIR . '/assets/css/owl.theme.default.min.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('nice-select', TRANSPOT_THEME_DIR . '/assets/css/nice-select.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('jquery-ui', TRANSPOT_THEME_DIR . '/assets/css/jquery-ui.css', [], TRANSPOT_THEME_VERSION, 'all');
@@ -59,6 +59,6 @@ function tanspot_enqueue_scripts()
     wp_enqueue_script('splitText', TRANSPOT_THEME_DIR . '/assets/js/gsap/splitText.js', array('jquery'), TRANSPOT_THEME_VERSION, true);
 
     // Main theme script (optional)
-    wp_enqueue_script('theme-main', TRANSPOT_THEME_DIR . '/assets/js/script.js', array('jquery'), TRANSPOT_THEME_VERSION, true);
+    wp_enqueue_script('theme-main', TRANSPOT_THEME_DIR . '/assets/js/script.js', array('jquery'), TRANSPOT_THEME_VERSION, time(), true);
 }
 add_action('wp_enqueue_scripts', 'tanspot_enqueue_scripts');

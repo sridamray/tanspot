@@ -17,4 +17,4 @@
 
     <?php do_action('tanspot_header'); ?>
     <?php do_action('tanspot_breadcrumb_content'); ?>
-    <?php tanspot_search_popup(); ?>
+    <?php do_action('tanspot_search_popups'); ?>

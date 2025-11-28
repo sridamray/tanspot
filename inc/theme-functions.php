@@ -111,6 +111,7 @@ function tanspot_search_popup()
 
 <?php
 }
+add_action('tanspot_search_popups', 'tanspot_search_popup');
 
 // header side info function
 
@@ -119,3 +120,40 @@ function tanspot_header_sideinfo()
     get_template_part('template-parts/header-sideinfo');
 }
 add_action('tanspot_header_sideinfo', 'tanspot_header_sideinfo');
+
+
+
+// CF7 function
+
+/**
+ * specific helper function to get a list of CF7 forms.
+ * Returns an array formatted for Kirki options: [ 'ID' => 'Title' ]
+ */
+function tanspot_get_cf7_forms()
+{
+    $options = array();
+
+
+    // Check if Contact Form 7 post type exists to avoid errors
+    if (post_type_exists('wpcf7_contact_form')) {
+
+        $args = array(
+            'post_type'      => 'wpcf7_contact_form',
+            'posts_per_page' => -1, // Get all forms
+            'post_status'    => 'publish',
+        );
+
+        $forms = get_posts($args);
+
+        if ($forms) {
+            foreach ($forms as $form) {
+                // Key is the ID, Value is the Form Title
+                $options[$form->ID] = $form->post_title;
+            }
+        }
+    } else {
+        $options['0'] = esc_html__('Contact Form 7 not found', 'tanspot');
+    }
+
+    return $options;
+}

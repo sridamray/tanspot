@@ -131,7 +131,7 @@
                                 </div>
                             </div>
                             <div class="main-menu__nav-sidebar-icon">
-                                <a class="navSidebar-button" href="#">
+                                <a class="navSidebar-button" href="javascript:void(0)">
                                     <span class="icon-dots-menu-one"></span>
                                     <span class="icon-dots-menu-two"></span>
                                     <span class="icon-dots-menu-three"></span>

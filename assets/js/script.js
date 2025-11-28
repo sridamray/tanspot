@@ -386,30 +386,6 @@
     });
   }
 
-  $(".contact-form-validated").each(function () {
-    $(this).validate({
-      rules: {
-        email: {
-          required: true,
-          email: true,
-        },
-      },
-      submitHandler: function (form) {
-        $.post(
-          $(form).attr("action"),
-          $(form).serialize(),
-          function (response) {
-            $(form).find(".result").html(response);
-            $(form)
-              .find('input[type="text"], input[type="email"], textarea')
-              .val("");
-          }
-        );
-        return false;
-      },
-    });
-  });
-
   if ($(".video-popup").length) {
     $(".video-popup").magnificPopup({
       type: "iframe",
@@ -536,15 +512,18 @@
   }
 
   //Header Search
+
+  // Check if the element exists to avoid running unnecessary code
   if ($(".searcher-toggler-box").length) {
-    $(".searcher-toggler-box").on("click", function () {
+    // 1. Open Search
+    $(".searcher-toggler-box").on("click", function (e) {
+      e.preventDefault(); // Prevents page jump or link follow
       $("body").addClass("search-active");
     });
-    $(".close-search").on("click", function () {
-      $("body").removeClass("search-active");
-    });
 
-    $(".search-popup .color-layer").on("click", function () {
+    // 2. Close Search (Close Button OR Overlay)
+    $(".close-search, .search-popup .color-layer").on("click", function (e) {
+      e.preventDefault();
       $("body").removeClass("search-active");
     });
   }

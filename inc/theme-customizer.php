@@ -56,6 +56,8 @@ add_action(
             ]
         );
 
+
+
         // Header Top Section
 
         new \Kirki\Section(
@@ -298,6 +300,66 @@ add_action(
                 'section'  => 'tanspot_header_right_settings',
                 'default'  => esc_html__('#', 'tanspot'),
                 'priority' => 10,
+            ]
+        );
+
+        // Header Side Content Settings
+
+        new \Kirki\Section(
+            'tanspot_header_side_content_settings',
+            [
+                'title'       => esc_html__('Header Side Content Settings', 'tanspot'),
+                'panel'       => 'tanspot_theme_customizer',
+                'priority'    => 160,
+            ]
+        );
+
+        new \Kirki\Field\Image(
+            [
+                'settings'    => 'header_side_content_logo',
+                'label'       => esc_html__('Header Side Logo', 'tanspot'),
+                'section'     => 'tanspot_header_side_content_settings',
+                'default'     => '',
+            ]
+        );
+
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'header_side_content_title',
+                'label'    => esc_html__('Title', 'tanspot'),
+                'section'  => 'tanspot_header_side_content_settings',
+                'default'  => esc_html__('About Us', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+
+        new \Kirki\Field\Textarea(
+            [
+                'settings'    => 'header_side_content_description',
+                'label'       => esc_html__('Descirption', 'tanspot'),
+                'section'     => 'tanspot_header_side_content_settings',
+                'default'     => esc_html__('Description', 'tanspot'),
+            ]
+        );
+
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'header_side_content_contact_form_title',
+                'label'    => esc_html__('Contact Title', 'tanspot'),
+                'section'  => 'tanspot_header_side_content_settings',
+                'default'  => esc_html__('Get a free quote', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+
+        new \Kirki\Field\Select(
+            [
+                'settings'    => 'header_side_content_select_cf7_form',
+                'label'       => esc_html__('Select CF7 Form', 'tanspot'),
+                'section'     => 'tanspot_header_side_content_settings',
+                'placeholder' => esc_html__('Choose a Form', 'tanspot'),
+                'default'     => '',
+                'choices'     => tanspot_get_cf7_forms(),
             ]
         );
 

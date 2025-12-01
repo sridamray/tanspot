@@ -363,6 +363,110 @@ add_action(
             ]
         );
 
+        // contact info
+
+        new \Kirki\Field\Checkbox_Switch(
+            [
+                'settings'    => 'header_side_content_contact_info_switcher',
+                'label'       => esc_html__('Enable Contact Info ?', 'tanspot'),
+                'section'     => 'tanspot_header_side_content_settings',
+                'default'     => 'on',
+                'choices'     => [
+                    'on'  => esc_html__('Enable', 'tanspot'),
+                    'off' => esc_html__('Disable', 'tanspot'),
+                ],
+            ]
+        );
+
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'header_side_content_contact_info_title',
+                'label'    => esc_html__('Contact Info Title', 'tanspot'),
+                'section'  => 'tanspot_header_side_content_settings',
+                'default'  => esc_html__('Contact Info', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'header_side_content_contact_info_address',
+                'label'    => esc_html__('Contact Info Address', 'tanspot'),
+                'section'  => 'tanspot_header_side_content_settings',
+                'default'  => esc_html__(' 88 broklyn street, New York', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'header_side_content_contact_info_phone',
+                'label'    => esc_html__('Contact Info Phone', 'tanspot'),
+                'section'  => 'tanspot_header_side_content_settings',
+                'default'  => esc_html__(' 15559990153', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'header_side_content_contact_info_email',
+                'label'    => esc_html__('Contact Info Email', 'tanspot'),
+                'section'  => 'tanspot_header_side_content_settings',
+                'default'  => esc_html__(' info@example.com', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+
+        // sidebar social section
+
+        new \Kirki\Field\Checkbox_Switch(
+            [
+                'settings'    => 'header_side_content_contact_info_social_switcher',
+                'label'       => esc_html__('Enable Social Area?', 'tanspot'),
+                'section'     => 'tanspot_header_side_content_settings',
+                'default'     => 'on',
+                'choices'     => [
+                    'on'  => esc_html__('Enable', 'tanspot'),
+                    'off' => esc_html__('Disable', 'tanspot'),
+                ],
+            ]
+        );
+
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'header_side_content_contact_info_facebook',
+                'label'    => esc_html__('Facebook', 'tanspot'),
+                'section'  => 'tanspot_header_side_content_settings',
+                'default'  => esc_html__('#', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'header_side_content_contact_info_twitter',
+                'label'    => esc_html__('Twitter', 'tanspot'),
+                'section'  => 'tanspot_header_side_content_settings',
+                'default'  => esc_html__('#', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'header_side_content_contact_info_pinterest',
+                'label'    => esc_html__('Pinterest', 'tanspot'),
+                'section'  => 'tanspot_header_side_content_settings',
+                'default'  => esc_html__('#', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'header_side_content_contact_info_instagram',
+                'label'    => esc_html__('Instagram', 'tanspot'),
+                'section'  => 'tanspot_header_side_content_settings',
+                'default'  => esc_html__('#', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+
 
 
 
@@ -397,6 +501,67 @@ add_action(
                 ],
             ]
         );
+
+        new \Kirki\Section(
+            'tanspot_breacrumb_settings',
+            [
+                'title'       => esc_html__('Breadcrumb Settings', 'tanspot'),
+                'panel'       => 'tanspot_theme_customizer',
+                'priority'    => 160,
+            ]
+        );
+
+
+
+
+        new \Kirki\Field\Image(
+            [
+                'settings'    => 'tanspot_breadcrumb_bg_image',
+                'label'       => esc_html__('Breadcrumb BG Image', 'tanspot'),
+                'section'     => 'tanspot_breacrumb_settings',
+                'default'     => '',
+            ]
+        );
+
+        new \Kirki\Field\Image(
+            [
+                'settings'    => 'tanspot_breadcrumb_thumb_image',
+                'label'       => esc_html__('Breadcrumb Thumbnail', 'tanspot'),
+                'section'     => 'tanspot_breacrumb_settings',
+                'default'     => '',
+            ]
+        );
+        new \Kirki\Field\Image(
+            [
+                'settings'    => 'tanspot_breadcrumb_shape1_image',
+                'label'       => esc_html__('Breadcrumb Shape', 'tanspot'),
+                'section'     => 'tanspot_breacrumb_settings',
+                'default'     => '',
+            ]
+        );
+
+        new \Kirki\Section(
+            'tanspot_blog_settings',
+            [
+                'title'       => esc_html__('Blog Settings', 'tanspot'),
+                'panel'       => 'tanspot_theme_customizer',
+                'priority'    => 160,
+            ]
+        );
+
+        new \Kirki\Field\Text(
+            [
+                'settings' => 'tanspot_blog_title',
+                'label'    => esc_html__('Blog Title', 'tanspot'),
+                'section'  => 'tanspot_blog_settings',
+                'default'  => esc_html__('Blog', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
+
+
+
+
 
         // Footer section
 

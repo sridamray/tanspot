@@ -7,6 +7,17 @@ $header_side_content_description = get_theme_mod('header_side_content_descriptio
 $header_side_content_contact_form_title = get_theme_mod('header_side_content_contact_form_title', esc_html__('Get a free quote', 'tanspot'));
 $header_side_content_select_cf7_form = get_theme_mod('header_side_content_select_cf7_form');
 
+$header_side_content_contact_info_title = get_theme_mod('header_side_content_contact_info_title', esc_html__('Contact Info', 'tanspot'));
+$header_side_content_contact_info_address = get_theme_mod('header_side_content_contact_info_address', esc_html__('88 broklyn street, New York', 'tanspot'));
+$header_side_content_contact_info_phone = get_theme_mod('header_side_content_contact_info_phone', esc_html__('+1 555-9990-153', 'tanspot'));
+$header_side_content_contact_info_email = get_theme_mod('header_side_content_contact_info_email', esc_html__('info@example.com', 'tanspot'));
+$header_side_content_contact_info_switcher = get_theme_mod('header_side_content_contact_info_switcher', true);
+$header_side_content_contact_info_social_switcher = get_theme_mod('header_side_content_contact_info_social_switcher', true);
+$header_side_content_contact_info_facebook = get_theme_mod('header_side_content_contact_info_facebook', esc_html__('#', 'tanspot'));
+$header_side_content_contact_info_twitter = get_theme_mod('header_side_content_contact_info_twitter', esc_html__('#', 'tanspot'));
+$header_side_content_contact_info_pinterest = get_theme_mod('header_side_content_contact_info_pinterest', esc_html__('#', 'tanspot'));
+$header_side_content_contact_info_instagram = get_theme_mod('header_side_content_contact_info_instagram', esc_html__('#', 'tanspot'));
+
 if (!empty($header_side_content_logo)) {
     $header_side_content_logo = $header_side_content_logo;
 } else {
@@ -58,39 +69,56 @@ if (!empty($header_side_content_logo)) {
 
 
                             </div>
-
-                            <div class="sidebar-contact-info">
-                                <h4>Contact Info</h4>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <span class="icon-location1"></span> 88 broklyn street, New York
-                                    </li>
-                                    <li>
-                                        <span class="icon-phone-call"></span>
-                                        <a href="tel:123456789">+1 555-9990-153</a>
-                                    </li>
-                                    <li>
-                                        <span class="icon-email"></span>
-                                        <a href="mailto:info@example.com">info@example.com</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="thm-social-link1">
-                                <ul class="social-box list-unstyled">
-                                    <li>
-                                        <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <?php if (!empty($header_side_content_contact_info_switcher)) : ?>
+                                <div class="sidebar-contact-info">
+                                    <h4><?php echo esc_html($header_side_content_contact_info_title, 'tanspot'); ?></h4>
+                                    <ul class="list-unstyled">
+                                        <?php if (!empty($header_side_content_contact_info_address)): ?>
+                                            <li>
+                                                <span class="icon-location1"></span> <?php echo esc_html($header_side_content_contact_info_address, 'tanspot'); ?>
+                                            </li>
+                                        <?php endif; ?>
+                                        <?php if (!empty($header_side_content_contact_info_phone)): ?>
+                                            <li>
+                                                <span class="icon-phone-call"></span>
+                                                <a href="tel:<?php echo esc_attr($header_side_content_contact_info_phone, 'tanspot'); ?>"><?php echo esc_html($header_side_content_contact_info_phone, 'tanspot'); ?></a>
+                                            </li>
+                                        <?php endif; ?>
+                                        <?php if (!empty($header_side_content_contact_info_email)): ?>
+                                            <li>
+                                                <span class="icon-email"></span>
+                                                <a href="mailto:<?php echo esc_attr($header_side_content_contact_info_email, 'tanspot'); ?>"><?php echo esc_html($header_side_content_contact_info_email, 'tanspot'); ?></a>
+                                            </li>
+                                        <?php endif; ?>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
+                            <?php if (!empty($header_side_content_contact_info_social_switcher)) : ?>
+                                <div class="thm-social-link1">
+                                    <ul class="social-box list-unstyled">
+                                        <?php if (!empty($header_side_content_contact_info_facebook)): ?>
+                                            <li>
+                                                <a href="<?php echo esc_url($header_side_content_contact_info_facebook, 'tanspot'); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                                            </li>
+                                        <?php endif; ?>
+                                        <?php if (!empty($header_side_content_contact_info_twitter)): ?>
+                                            <li>
+                                                <a href="<?php echo esc_url($header_side_content_contact_info_twitter, 'tanspot'); ?>"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                                            </li>
+                                        <?php endif; ?>
+                                        <?php if (!empty($header_side_content_contact_info_pinterest)): ?>
+                                            <li>
+                                                <a href="<?php echo esc_url($header_side_content_contact_info_pinterest, 'tanspot'); ?>"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+                                            </li>
+                                        <?php endif; ?>
+                                        <?php if (!empty($header_side_content_contact_info_instagram)): ?>
+                                            <li>
+                                                <a href="<?php echo esc_url($header_side_content_contact_info_instagram, 'tanspot'); ?>"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                            </li>
+                                        <?php endif; ?>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,7 @@
 function tanspot_breadcrumb_func()
 {
     global $post;
+    $page_id = get_the_ID();
 
     $title = get_bloginfo('name');
 
@@ -21,6 +22,23 @@ function tanspot_breadcrumb_func()
     $tanspot_breadcrumb_bg_image = get_theme_mod('tanspot_breadcrumb_bg_image');
     $tanspot_breadcrumb_thumb_image = get_theme_mod('tanspot_breadcrumb_thumb_image');
     $tanspot_breadcrumb_shape1_image = get_theme_mod('tanspot_breadcrumb_shape1_image');
+    $tanspot_page_breadcrumb_image = function_exists('get_field') ? get_field('tanspot_page_breadcrumb_image',) : NULL;
+
+    if (!empty($tanspot_page_breadcrumb_image)) {
+        $tanspot_breadrumb_url = $tanspot_page_breadcrumb_image['url'];
+    } else {
+        $tanspot_breadrumb_url = $tanspot_breadcrumb_bg_image;
+    }
+
+    $tanspot_hide_breadcrumb = function_exists('get_field') ? get_field('tanspot_hide_breadcrumb', $page_id) : '';
+
+
+
+
+
+
+
+
 
 
 
@@ -33,32 +51,33 @@ function tanspot_breadcrumb_func()
 
 
 
-
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(<?php echo esc_url($tanspot_breadcrumb_bg_image, 'tanspot'); ?>);">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <div class="page-header__img-1">
-                    <img src="<?php echo esc_url($tanspot_breadcrumb_thumb_image, 'tanspot'); ?>" alt="">
-                </div>
-                <div class="page-header__shape-1 float-bob-y">
-                    <img src="<?php echo esc_url($tanspot_breadcrumb_shape1_image, 'tanspot'); ?>" alt="">
-                </div>
-                <p></p>
-                <h2></h2>
-                <h3><?php echo esc_html($title, 'tanspot'); ?></h3>
-                <div class="thm-breadcrumb__inner">
-                    <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="<?php echo esc_url(home_url()); ?>"><?php echo esc_html__('Home', 'tanspot'); ?></a></li>
-                        <li><span class="fas fa-angle-right"></span></li>
-                        <li><?php echo esc_html($title, 'tanspot'); ?></li>
-                    </ul>
+    <?php if (! $tanspot_hide_breadcrumb): ?>
+        <!--Page Header Start-->
+        <section class="page-header">
+            <div class="page-header__bg" style="background-image: url(<?php echo esc_url($tanspot_breadrumb_url, 'tanspot'); ?>);">
+            </div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <div class="page-header__img-1">
+                        <img src="<?php echo esc_url($tanspot_breadcrumb_thumb_image, 'tanspot'); ?>" alt="">
+                    </div>
+                    <div class="page-header__shape-1 float-bob-y">
+                        <img src="<?php echo esc_url($tanspot_breadcrumb_shape1_image, 'tanspot'); ?>" alt="">
+                    </div>
+                    <p></p>
+                    <h2></h2>
+                    <h3><?php echo esc_html($title, 'tanspot'); ?></h3>
+                    <div class="thm-breadcrumb__inner">
+                        <ul class="thm-breadcrumb list-unstyled">
+                            <li><a href="<?php echo esc_url(home_url()); ?>"><?php echo esc_html__('Home', 'tanspot'); ?></a></li>
+                            <li><span class="fas fa-angle-right"></span></li>
+                            <li><?php echo esc_html($title, 'tanspot'); ?></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php endif; ?>
 
 
 

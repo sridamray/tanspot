@@ -4,6 +4,36 @@ acf_add_local_field_group(
         'key' => 'tanspot_page_settings',
         'title' => 'Page Settings',
         'fields' => array(
+            // Breadcrumb Hide/Show Settings
+            array(
+                'key' => 'tanspot_hide_breadcrumb',
+                'label' => 'Hide Breadcrumb ?',
+                'name' => 'tanspot_hide_breadcrumb',
+                'type' => 'true_false',
+                'required' => 0,
+                'ui' => 1,
+                'wrapper' => array(
+                    'width' => '25', // Set width to 50%
+                    'class' => '',
+                    'id' => '',
+                ),
+            ),
+            // Breadcrumb Image Settings
+            array(
+                'key' => 'tanspot_page_breadcrumb_image',
+                'label' => 'Breadcrumb Image',
+                'name' => 'tanspot_page_breadcrumb_images',
+                'type' => 'image',
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'wrapper' => array(
+                    'width' => '25', // Set width to 50%
+                    'class' => '',
+                    'id' => '',
+                ),
+            ),
+
             array(
                 'key' => 'tanspot_field_header_style',
                 'label' => 'Header Style',
@@ -42,20 +72,7 @@ acf_add_local_field_group(
                     'id' => '',
                 ),
             ),
-            array(
-                'key' => 'field_hide_breadcrumb',
-                'label' => 'Hide Breadcrumb',
-                'name' => 'hide_breadcrumb',
-                'type' => 'true_false',
-                'instructions' => 'Is Invisible Breadcrumb',
-                'required' => 0,
-                'ui' => 1,
-                'wrapper' => array(
-                    'width' => '25', // Set width to 50%
-                    'class' => '',
-                    'id' => '',
-                ),
-            ),
+
 
             array(
                 'key' => 'tanspot_page_logos',

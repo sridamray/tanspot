@@ -128,6 +128,17 @@ add_action(
             ]
         );
 
+        new \Kirki\Field\Select(
+            [
+                'settings'    => 'tanspot_header_top_menu_select',
+                'label'       => esc_html__('Select Menu', 'tanspot'),
+                'section'     => 'tanspot_header_top',
+                'default'     => '',
+                'placeholder' => esc_html__('Choose a Menu', 'tanspot'),
+                'choices'     => tanspot_get_existing_menus(),
+            ]
+        );
+
         // Header To social
 
 

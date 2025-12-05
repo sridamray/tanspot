@@ -9226,7 +9226,7 @@ Error Page
   margin-left: 75px;
 }
 
-.footer-widget__usefull-link {
+.footer-widget__usefull-link, .footer-1-column-2 {
   position: relative;
   display: block;
   margin-left: 80px;
@@ -9237,28 +9237,28 @@ Error Page
   display: block;
 }
 
-.footer-widget__link {
+.footer-widget__link, .widget .menu {
   position: relative;
   display: block;
 }
 
-.footer-widget__link li {
+.footer-widget__link li, .widget .menu li.menu-item {
   position: relative;
   display: block;
 }
 
-.footer-widget__link li+li {
+.footer-widget__link li+li, .widget .menu li.menu-item+li.menu-item {
   margin-top: 12px;
 }
 
-.footer-widget__link li a {
+.footer-widget__link li a, .widget .menu li.menu-item a {
   color: rgba(var(--tanspot-white-rgb), .80);
   text-transform: capitalize;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
 }
 
-.footer-widget__link li a:hover {
+.footer-widget__link li a:hover, .widget .menu li.menu-item a:hover {
   color: var(--tanspot-base);
 }
 

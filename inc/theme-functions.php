@@ -65,6 +65,40 @@ function tanspot_main_menu()
 }
 
 
+// Get Menu List
+
+function tanspot_get_existing_menus()
+{
+
+    $menus = wp_get_nav_menus();
+    $choices = [];
+
+    if (!empty($menus)) {
+        foreach ($menus as $menu) {
+            $choices[$menu->term_id] = $menu->name;
+        }
+    }
+
+    return $choices;
+}
+
+function tanspot_top_menu_functions()
+{
+    $tanspot_header_top_menu_select = get_theme_mod('tanspot_header_top_menu_select');
+
+    if ($tanspot_header_top_menu_select) {
+        wp_nav_menu([
+            'menu'       => $tanspot_header_top_menu_select,
+            'container'  => false,
+            'menu_class' => 'tanspot-header-top-menu',
+        ]);
+    }
+}
+
+
+
+
+
 // Theme Logo Function
 
 

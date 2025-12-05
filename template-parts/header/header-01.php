@@ -23,6 +23,7 @@
 
 
 
+
     ?>
 
 
@@ -60,6 +61,9 @@
                         </li>
                     </ul>
                     <p class="main-menu__top-welcome-text"><?php echo esc_html($tanspot_header_top_welcome_text, 'tanspot'); ?></p>
+
+                    <?php tanspot_top_menu_functions(); ?>
+
                     <div class="main-menu__top-right">
                         <div class="main-menu__top-time">
                             <div class="main-menu__top-time-icon">

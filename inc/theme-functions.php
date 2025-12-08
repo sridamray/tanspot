@@ -82,15 +82,15 @@ function tanspot_get_existing_menus()
     return $choices;
 }
 
-function tanspot_top_menu_functions()
+function tanspot_footer_bottom_menu_functions()
 {
-    $tanspot_header_top_menu_select = get_theme_mod('tanspot_header_top_menu_select');
+    $tanspot_header_bottom_menu_select = get_theme_mod('tanspot_header_bottom_menu_select');
 
-    if ($tanspot_header_top_menu_select) {
+    if ($tanspot_header_bottom_menu_select) {
         wp_nav_menu([
-            'menu'       => $tanspot_header_top_menu_select,
+            'menu'       => $tanspot_header_bottom_menu_select,
             'container'  => false,
-            'menu_class' => 'tanspot-header-top-menu',
+            'menu_class' => 'list-unstyled site-footer__bottom-menu',
         ]);
     }
 }

@@ -14,7 +14,7 @@ function tanspot_enqueue_scripts()
     wp_enqueue_style('animate', TRANSPOT_THEME_DIR . '/assets/css/animate.min.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('custom-animate', TRANSPOT_THEME_DIR . '/assets/css/custom-animate.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('swiper', TRANSPOT_THEME_DIR . '/assets/css/swiper.min.css', [], TRANSPOT_THEME_VERSION, 'all');
-    wp_enqueue_style('font-awesome', TRANSPOT_THEME_DIR . '/assets/css/font-awesome-all.css', [], TRANSPOT_THEME_VERSION, 'all');
+    wp_enqueue_style('font-Awesome', TRANSPOT_THEME_DIR . '/assets/css/font-awesome-all.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('jarallax', TRANSPOT_THEME_DIR . '/assets/css/jarallax.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('magnific-popup', TRANSPOT_THEME_DIR . '/assets/css/jquery.magnific-popup.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('flaticon', TRANSPOT_THEME_DIR . '/assets/css/flaticon.css', [], TRANSPOT_THEME_VERSION, 'all');

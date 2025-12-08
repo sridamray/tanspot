@@ -46,6 +46,7 @@ function tanspot_load_textdomain()
     require_once get_template_directory() . '/inc/common/theme-breadcrumb.php';
     require_once get_template_directory() . '/inc/common/theme-widgets.php';
     require_once get_template_directory() . '/inc/theme-functions.php';
+    require_once get_template_directory() . '/inc/template-helpers.php';
     add_filter('gutenberg_use_widgets_block_editor', '__return_false');
     add_filter('use_widgets_block_editor', '__return_false');
 }

@@ -128,16 +128,7 @@ add_action(
             ]
         );
 
-        new \Kirki\Field\Select(
-            [
-                'settings'    => 'tanspot_header_top_menu_select',
-                'label'       => esc_html__('Select Menu', 'tanspot'),
-                'section'     => 'tanspot_header_top',
-                'default'     => '',
-                'placeholder' => esc_html__('Choose a Menu', 'tanspot'),
-                'choices'     => tanspot_get_existing_menus(),
-            ]
-        );
+
 
         // Header To social
 
@@ -571,6 +562,41 @@ add_action(
         );
 
 
+        // Footer Top Settings
+
+
+        new \Kirki\Section(
+            'tanspot_footer_top_settings',
+            [
+                'title'       => esc_html__('Footer Top CTA', 'tanspot'),
+                'description' => esc_html__('Only For Footer Style 1', 'tanspot'),
+                'panel'       => 'tanspot_theme_customizer',
+                'priority'    => 160,
+            ]
+        );
+
+        new \Kirki\Field\Textarea(
+            [
+                'settings'    => 'tanspot_footer_top_cta_text',
+                'label'       => esc_html__('CTA Text', 'tanspot'),
+                'section'     => 'tanspot_footer_top_settings',
+                'default'     => esc_html__('Subscribe To Our Newsletter To<br>Get Latest Update', 'tanspot'),
+            ]
+        );
+
+
+        new \Kirki\Field\Select(
+            [
+                'settings'    => 'tanspot_footer_top_cta_form',
+                'label'       => esc_html__('Select CF7 Form', 'tanspot'),
+                'section'     => 'tanspot_footer_top_settings',
+                'placeholder' => esc_html__('Choose a Form', 'tanspot'),
+                'default'     => '',
+                'choices'     => tanspot_get_cf7_forms(),
+            ]
+        );
+
+
 
 
 
@@ -601,5 +627,39 @@ add_action(
                 ],
             ]
         );
+        // Footer copyright Settings
+
+        new \Kirki\Section(
+            'tanspot_footer_copywrite_settings',
+            [
+                'title'       => esc_html__('Footer Copywrite', 'tanspot'),
+                'description' => esc_html__('Footer Copywrite', 'tanspot'),
+                'panel'       => 'tanspot_theme_customizer',
+                'priority'    => 160,
+            ]
+        );
+
+        new \Kirki\Field\Textarea(
+            [
+                'settings'    => 'tanspot_footer_copywrite_text',
+                'label'       => esc_html__('Copywrite Text', 'tanspot'),
+                'section'     => 'tanspot_footer_copywrite_settings',
+                'default'     => esc_html__('© Copywright 2025 by <a href="https://themeforest.net/user/dreamlayout">Tanspot.com</a> All Rights Reserved.', 'tanspot'),
+            ]
+        );
+
+        new \Kirki\Field\Select(
+            [
+                'settings'    => 'tanspot_header_bottom_menu_select',
+                'label'       => esc_html__('Select Menu', 'tanspot'),
+                'section'     => 'tanspot_footer_copywrite_settings',
+                'default'     => '',
+                'placeholder' => esc_html__('Choose a Menu', 'tanspot'),
+                'choices'     => tanspot_get_existing_menus(),
+            ]
+        );
+
+        // end init function
     }
+
 );

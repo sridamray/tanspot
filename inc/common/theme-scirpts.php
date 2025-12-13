@@ -26,6 +26,7 @@ function tanspot_enqueue_scripts()
     wp_enqueue_style('odometer', TRANSPOT_THEME_DIR . '/assets/css/odometer.min.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('theme', TRANSPOT_THEME_DIR . '/assets/css/style.css', [], TRANSPOT_THEME_VERSION, 'all');
     wp_enqueue_style('responsive', TRANSPOT_THEME_DIR . '/assets/css/responsive.css', [], TRANSPOT_THEME_VERSION, 'all');
+    wp_enqueue_style('wp-fix', TRANSPOT_THEME_DIR . '/assets/css/wp-fix.css', [], TRANSPOT_THEME_VERSION, 'all');
 
     wp_enqueue_style('tanspot-main', get_stylesheet_uri(), array(), TRANSPOT_THEME_VERSION, 'all');
 

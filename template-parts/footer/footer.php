@@ -1,8 +1,8 @@
      <?php
 
-        $tanspot_footer_top_cta_text = get_theme_mod('tanspot_footer_top_cta_text', esc_html__('Subscribe To Our Newsletter To<br>Get Latest Update', 'tanspot'));
+        $tanspot_footer_top_cta_text = get_theme_mod('tanspot_footer_top_cta_text', tanspot_kses('Subscribe To Our Newsletter To<br>Get Latest Update', 'tanspot'));
         $tanspot_footer_top_cta_form = get_theme_mod('tanspot_footer_top_cta_form');
-        $tanspot_footer_copywrite_text = get_theme_mod('tanspot_footer_copywrite_text', esc_html__('© Copywright 2025 by <a href="https://themeforest.net/user/dreamlayout">Tanspot.com</a> All Rights Reserved.', 'tanspot'));
+        $tanspot_footer_copywrite_text = get_theme_mod('tanspot_footer_copywrite_text', tanspot_kses('© Copywright 2025 by <a href="https://themeforest.net/user/dreamlayout">Tanspot.com</a> All Rights Reserved.', 'tanspot'));
 
 
         ?>

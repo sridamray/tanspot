@@ -77,12 +77,7 @@
                             <?php endif; ?>
 
 
-                            <?php foreach ($header_top_social_repeater as $header_top_socials):
-
-
-                            ?>
-                                <a href="<?php echo esc_url($header_top_socials['social_link'], 'tanspot'); ?>"><i class="<?php echo esc_attr($header_top_socials['social_link_icon'], 'tanpost'); ?>"></i></a>
-                            <?php endforeach; ?>
+                
 
                         </div>
                     </div>

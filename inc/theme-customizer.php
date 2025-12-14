@@ -127,6 +127,15 @@ add_action(
                 'priority' => 10,
             ]
         );
+        new \Kirki\Field\Textarea(
+            [
+                'settings' => 'tanspot_header_top_lang',
+                'label'    => esc_html__('Language', 'tanspot'),
+                'section'  => 'tanspot_header_top',
+                'default'  => esc_html__('', 'tanspot'),
+                'priority' => 10,
+            ]
+        );
 
 
 

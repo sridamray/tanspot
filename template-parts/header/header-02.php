@@ -1,4 +1,35 @@
+  <?php
+
+   $tanspot_header_top_phone = get_theme_mod('tanspot_header_top_phone', esc_html__('+15502505260', 'tanspot'));
+    $tanspot_header_top_email = get_theme_mod('tanspot_header_top_email', esc_html__('info@tanspot24.com', 'tanspot'));
+    $tanspot_header_top_location = get_theme_mod('tanspot_header_top_location', esc_html__('4124 Cimmaron Road, CA 92806', 'tanspot'));
+    $tanspot_header_top_welcome_text = get_theme_mod('tanspot_header_top_welcome_text', esc_html__('Welcome to Our Tanspot Office', 'tanspot'));
+    $tanspot_header_top_office_time = get_theme_mod('tanspot_header_top_office_time', esc_html__('Mon - Fri: 09:00 - 05:00', 'tanspot'));
+    $tanspot_header_top_twitter = get_theme_mod('tanspot_header_top_twitter', esc_html__('#', 'tanspot'));
+    $tanspot_header_top_facebook = get_theme_mod('tanspot_header_top_facebook', esc_html__('#', 'tanspot'));
+    $tanspot_header_top_pinterest = get_theme_mod('tanspot_header_top_pinterest', esc_html__('#', 'tanspot'));
+    $tanspot_header_top_instagram = get_theme_mod('tanspot_header_top_instagram', esc_html__('#', 'tanspot'));
+    $header_top_switcher = get_theme_mod('header_top_switcher', true);
+
+    // Header Right
+
+
+     
+    $header_right_switcher = get_theme_mod('header_right_switcher', false);
+    $tanspot_header_right_cta_text = get_theme_mod('tanspot_header_right_cta_text', esc_html__('Call Anytime', 'tanspot'));
+    $tanspot_header_right_cta_phone = get_theme_mod('tanspot_header_right_cta_phone', esc_html__('+9288006780', 'tanspot'));
+    $header_right_cta_switcher = get_theme_mod('header_right_cta_switcher', true);
+    $tanspot_header_right_btn_text = get_theme_mod('tanspot_header_right_btn_text', esc_html__('Track Order', 'tanspot'));
+    $tanspot_header_right_btn_url = get_theme_mod('tanspot_header_right_btn_url', esc_html__('#', 'tanspot'));
+    $header_right_btn_switcher = get_theme_mod('header_right_btn_switcher', true);
+
+
+
+?>
+  
+  
   <header class="main-header-two">
+    <?php if(!empty($header_top_switcher)):?>
       <div class="main-menu-two__top">
           <div class="main-menu-two__top-inner">
               <ul class="list-unstyled main-menu-two__contact-list">
@@ -7,7 +38,7 @@
                           <i class="icon-phone-call"></i>
                       </div>
                       <div class="text">
-                          <p><a href="tel:15502505260">+1 (550) 250 5260</a></p>
+                          <p><a href="tel:<?php echo esc_attr($tanspot_header_top_phone, 'tanspot'); ?>"><?php echo esc_html($tanspot_header_top_phone, 'tanspot'); ?></a></p>
                       </div>
                   </li>
                   <li>
@@ -15,7 +46,7 @@
                           <i class="icon-email"></i>
                       </div>
                       <div class="text">
-                          <p><a href="mailto:info@tanspot24.com">info@tanspot24.com</a>
+                          <p><a href="mailto:<?php echo esc_attr($tanspot_header_top_email, 'tanspot'); ?>"><?php echo esc_html($tanspot_header_top_email, 'tanspot'); ?></a>
                           </p>
                       </div>
                   </li>
@@ -24,7 +55,7 @@
                           <i class="icon-location1"></i>
                       </div>
                       <div class="text">
-                          <p>4124 Cimmaron Road, CA 92806</p>
+                          <p><?php echo esc_html($tanspot_header_top_location, 'tanspot'); ?></p>
                       </div>
                   </li>
               </ul>
@@ -33,216 +64,52 @@
                       <div class="main-menu-two__top-time-icon">
                           <span class="fas fa-clock"></span>
                       </div>
-                      <p class="main-menu-two__top-text">Mon - Fri: 09:00 - 05:00</p>
+                      <p class="main-menu-two__top-text"><?php echo esc_html($tanspot_header_top_office_time, 'tanspot'); ?></p>
                   </div>
                   <div class="main-menu-two__social">
-                      <a href="#"><i class="fab fa-twitter"></i></a>
-                      <a href="#"><i class="fab fa-facebook"></i></a>
-                      <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    <?php if (!empty($tanspot_header_top_twitter)) : ?>
+                      <a href="<?php echo esc_url($tanspot_header_top_twitter, 'tanspot'); ?>"><i class="fab fa-twitter"></i></a>
+                      <?php endif;?>
+                      <?php if(!empty($tanspot_header_top_facebook)):?>
+                      <a href="<?php echo esc_url($tanspot_header_top_facebook, 'tanspot'); ?>"><i class="fab fa-facebook"></i></a>
+                      <?php endif;?>
+                      <?php if(!empty($tanspot_header_top_pinterest)):?>
+                      <a href="<?php echo esc_url($tanspot_header_top_pinterest, 'tanspot'); ?> "><i class="fab fa-pinterest-p"></i></a>
+                      <?php endif;?>
+                      <?php if(!empty($tanspot_header_top_instagram)):?>
+                      <a href="<?php echo esc_url($tanspot_header_top_instagram, 'tanspot'); ?>"><i class="fab fa-instagram"></i></a>
+                      <?php endif;?>
                   </div>
               </div>
           </div>
       </div>
+      <?php endif;?>
       <nav class="main-menu">
           <div class="main-menu-two__wrapper">
               <div class="main-menu-two__wrapper-inner">
                   <div class="main-menu-two__left">
                       <div class="main-menu-two__logo">
-                          <a href="index.html"><img src="assets/images/resources/logo-2.png" alt=""></a>
+                           <?php tanspot_theme_logo(); ?>
                       </div>
                   </div>
                   <div class="main-menu-two__main-menu-box">
                       <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                      <ul class="main-menu__list">
-                          <li class="dropdown megamenu">
-                              <a href="#">Home </a>
-                              <ul>
-                                  <li>
-                                      <section class="home-showcase">
-                                          <div class="container">
-                                              <div class="home-showcase__inner">
-                                                  <div class="row">
-                                                      <div class="col-lg-3">
-                                                          <div class="home-showcase__item">
-                                                              <div class="home-showcase__image">
-                                                                  <img src="assets/images/home-showcase/home-showcase-1-1.jpg"
-                                                                      alt="">
-                                                                  <div class="home-showcase__buttons">
-                                                                      <a href="index.html"
-                                                                          class="thm-btn home-showcase__buttons__item">Multi
-                                                                          Page
-                                                                          <span><i
-                                                                                  class="icon-right-arrow"></i></span>
-                                                                      </a>
-                                                                      <a href="index-one-page.html"
-                                                                          class="thm-btn home-showcase__buttons__item">One
-                                                                          Page
-                                                                          <span><i
-                                                                                  class="icon-right-arrow"></i></span>
-                                                                      </a>
-                                                                  </div>
-                                                                  <!-- /.home-showcase__buttons -->
-                                                              </div><!-- /.home-showcase__image -->
-                                                              <h3 class="home-showcase__title">Home
-                                                                  Page
-                                                                  01</h3>
-                                                              <!-- /.home-showcase__title -->
-                                                          </div><!-- /.home-showcase__item -->
-                                                      </div><!-- /.col-lg-3 -->
-                                                      <div class="col-lg-3">
-                                                          <div class="home-showcase__item">
-                                                              <div class="home-showcase__image">
-                                                                  <img src="assets/images/home-showcase/home-showcase-1-2.jpg"
-                                                                      alt="">
-                                                                  <div class="home-showcase__buttons">
-                                                                      <a href="index2.html"
-                                                                          class="thm-btn home-showcase__buttons__item">
-                                                                          Multi
-                                                                          Page
-                                                                          <span><i
-                                                                                  class="icon-right-arrow"></i></span>
-                                                                      </a>
-                                                                      <a href="index2-one-page.html"
-                                                                          class="thm-btn home-showcase__buttons__item">
-                                                                          One
-                                                                          Page
-                                                                          <span><i
-                                                                                  class="icon-right-arrow"></i></span>
-                                                                      </a>
-                                                                  </div>
-                                                                  <!-- /.home-showcase__buttons -->
-                                                              </div><!-- /.home-showcase__image -->
-                                                              <h3 class="home-showcase__title">Home
-                                                                  Page
-                                                                  02
-                                                              </h3><!-- /.home-showcase__title -->
-                                                          </div><!-- /.home-showcase__item -->
-                                                      </div><!-- /.col-lg-3 -->
-                                                      <div class="col-lg-3">
-                                                          <div class="home-showcase__item">
-                                                              <div class="home-showcase__image">
-                                                                  <img src="assets/images/home-showcase/home-showcase-1-3.jpg"
-                                                                      alt="">
-                                                                  <div class="home-showcase__buttons">
-                                                                      <a href="index3.html"
-                                                                          class="thm-btn home-showcase__buttons__item">
-                                                                          Multi
-                                                                          Page
-                                                                          <span><i
-                                                                                  class="icon-right-arrow"></i></span>
-                                                                      </a>
-                                                                      <a href="index3-one-page.html"
-                                                                          class="thm-btn home-showcase__buttons__item">
-                                                                          One
-                                                                          Page
-                                                                          <span><i
-                                                                                  class="icon-right-arrow"></i></span>
-                                                                      </a>
-                                                                  </div>
-                                                                  <!-- /.home-showcase__buttons -->
-                                                              </div><!-- /.home-showcase__image -->
-                                                              <h3 class="home-showcase__title">Home
-                                                                  Page
-                                                                  03
-                                                              </h3><!-- /.home-showcase__title -->
-                                                          </div><!-- /.home-showcase__item -->
-                                                      </div><!-- /.col-lg-3 -->
-                                                      <div class="col-lg-3">
-                                                          <div class="home-showcase__item">
-                                                              <div class="home-showcase__image">
-                                                                  <img src="assets/images/home-showcase/home-showcase-1-4.jpg"
-                                                                      alt="">
-                                                                  <div class="home-showcase__buttons">
-                                                                      <a href="index-dark.html"
-                                                                          class="thm-btn home-showcase__buttons__item">
-                                                                          View
-                                                                          Page
-                                                                          <span><i
-                                                                                  class="icon-right-arrow"></i></span>
-                                                                      </a>
-                                                                  </div>
-                                                                  <!-- /.home-showcase__buttons -->
-                                                              </div><!-- /.home-showcase__image -->
-                                                              <h3 class="home-showcase__title">Dark Page
-                                                              </h3><!-- /.home-showcase__title -->
-                                                          </div><!-- /.home-showcase__item -->
-                                                      </div><!-- /.col-lg-3 -->
-                                                  </div><!-- /.row -->
-                                              </div><!-- /.home-showcase__inner -->
-
-                                          </div><!-- /.container -->
-                                      </section>
-                                  </li>
-                              </ul>
-                          </li>
-                          <li>
-                              <a href="about.html">About</a>
-                          </li>
-                          <li class="dropdown">
-                              <a href="#">Pages</a>
-                              <ul class="shadow-box">
-                                  <li><a href="team.html">Team</a></li>
-                                  <li><a href="team-details.html">Team Details</a></li>
-                                  <li><a href="projects.html">Projects</a></li>
-                                  <li><a href="project-details.html">Project Details</a></li>
-                                  <li><a href="testimonials.html">Testimonials</a></li>
-                                  <li><a href="pricing.html">Pricing</a></li>
-                                  <li><a href="faq.html">FAQs</a></li>
-                                  <li><a href="404.html">404 Error</a></li>
-                              </ul>
-                          </li>
-                          <li class="dropdown">
-                              <a href="#">Services</a>
-                              <ul class="shadow-box">
-                                  <li><a href="services.html">Services</a></li>
-                                  <li><a href="international-transport.html">International Transport</a></li>
-                                  <li><a href="track-transport.html">Local Track Transport</a></li>
-                                  <li><a href="personal-delivery.html">Fast Personal Delivery</a></li>
-                                  <li><a href="ocean-transport.html">Safe Ocean Transport</a></li>
-                                  <li><a href="warehouse-facility.html">Warehouse Facility</a></li>
-                                  <li><a href="emergency-transport.html">Emergency Transport</a></li>
-                              </ul>
-                          </li>
-                          <li class="dropdown">
-                              <a href="#">Shop</a>
-                              <ul class="shadow-box">
-                                  <li><a href="products.html">Products</a></li>
-                                  <li><a href="product-details.html">Product Details</a></li>
-                                  <li><a href="cart.html">Cart</a></li>
-                                  <li><a href="checkout.html">Checkout</a></li>
-                                  <li><a href="wishlist.html">Wishlist</a></li>
-                                  <li><a href="sign-up.html">Sign Up</a></li>
-                                  <li><a href="login.html">Login</a></li>
-                              </ul>
-                          </li>
-                          <li class="dropdown">
-                              <a href="#">Blog</a>
-                              <ul class="shadow-box">
-                                  <li><a href="blog.html">Blog</a></li>
-                                  <li><a href="blog-standard.html">Blog Standard</a></li>
-                                  <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                  <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                  <li><a href="blog-details.html">Blog Details</a></li>
-                              </ul>
-                          </li>
-                          <li>
-                              <a href="contact.html">Contact</a>
-                          </li>
-                      </ul>
+                       <?php tanspot_main_menu(); ?>
                   </div>
+                  <?php if(!empty($header_right_switcher)):?>
                   <div class="main-menu-two__right">
                       <div class="main-menu-two__right-content">
+                        <?php if (!empty($header_right_cta_switcher)) : ?>
                           <div class="main-menu-two__call">
                               <div class="main-menu-two__call-icon">
                                   <i class="icon-phone-call"></i>
                               </div>
                               <div class="main-menu-two__call-content">
-                                  <p class="main-menu-two__call-sub-title">Call Anytime</p>
-                                  <h5 class="main-menu-two__call-number"><a href="tel:9288006780">+92 ( 8800 ) -
-                                          6780</a></h5>
+                                  <p class="main-menu-two__call-sub-title"><?php echo esc_html($tanspot_header_right_cta_text, 'tanspot'); ?></p>
+                                  <h5 class="main-menu-two__call-number"><a href="tel:<?php echo esc_attr($tanspot_header_right_cta_phone, 'tanspot'); ?>"><?php echo esc_html($tanspot_header_right_cta_phone, 'tanspot'); ?></a></h5>
                               </div>
                           </div>
+                        <?php endif;?>
                           <div class="main-menu-two__search-cart-box">
                               <div class="main-menu-two__search-cart-box">
                                   <div class="main-menu-two__search-box">
@@ -264,12 +131,15 @@
                                   <span class="icon-dots-menu-three"></span>
                               </a>
                           </div>
-                          <div class="main-menu-two__btn-box">
-                              <a href="contact.html" class="thm-btn">Track Order<span><i
-                                          class="icon-right-arrow"></i></span></a>
-                          </div>
+                          <?php if (!empty($header_right_btn_switcher)) : ?>
+                            <div class="main-menu-two__btn-box">
+                                <a href="<?php echo esc_url($tanspot_header_right_btn_url, 'tanspot'); ?>" class="thm-btn"><?php echo esc_html($tanspot_header_right_btn_text, 'tanspot'); ?><span><i
+                                            class="icon-right-arrow"></i></span></a>
+                            </div>
+                          <?php endif;?>
                       </div>
                   </div>
+                  <?php endif;?>
               </div>
           </div>
       </nav>

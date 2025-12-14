@@ -1,6 +1,7 @@
 (function ($) {
   "use strict";
 
+   $("select:not(.ignore)").niceSelect();
   /*--------------------------------------------------------------
     RegisterPlugin, ScrollTrigger, SplitText
   --------------------------------------------------------------*/
@@ -1214,5 +1215,5 @@
     }
   });
 
-  $("select:not(.ignore)").niceSelect();
+ 
 })(jQuery);

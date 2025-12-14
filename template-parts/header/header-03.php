@@ -1,3 +1,11 @@
+ <?php 
+
+ $tanspot_header_top_lang = get_theme_mod('tanspot_header_top_lang');
+
+
+
+?>
+ 
  <header class="main-header-three">
      <div class="main-menu-three__top">
          <div class="container">
@@ -23,22 +31,7 @@
                  </ul>
                  <div class="main-menu-three__top-right">
                      <div class="main-menu-three__language-switcher">
-                         <div class="icon">
-                             <span class="fa fa-globe"></span>
-                         </div>
-
-                         <div class="language-switcher clearfix">
-                             <form action="#" class="clearfix">
-                                 <div class="select-box clearfix">
-                                     <select class="selectmenu wide">
-                                         <option selected="selected">ENG</option>
-                                         <option>FRA</option>
-                                         <option>GER</option>
-                                         <option>BAN</option>
-                                     </select>
-                                 </div>
-                             </form>
-                         </div>
+                         <?php echo tanspot_kses($tanspot_header_top_lang);?>
                      </div>
                      <div class="main-menu-three__social">
                          <a href="#"><i class="fab fa-twitter"></i></a>

@@ -53,7 +53,7 @@ function tanspot_load_textdomain()
 add_action('init', 'tanspot_load_textdomain');
 
 
-require_once get_template_directory() . '/inc/common/acf-metabox.php';
+
 require_once get_template_directory() . '/inc/common/theme-scirpts.php';
 
 
